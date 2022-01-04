@@ -1,4 +1,8 @@
 [[redirect]]
 from = "/*"
-to="/index.html"
+to="./template/index.html"
 status=200
+
+[[build]]
+command="python main.py"
+base="/"
