@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="./style.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>House Price Prediction</title>
+</head>
+
+
+
+
+
+
+
+
+
+<body class="bg-dark">
+    <div
+id="carouselVideoExample"
+class="carousel slide carousel-fade"
+data-mdb-ride="carousel"
+>
+
+<nav class="bg-dark navbar-dark">
+    <div class="container">
+      <a href="" class="navbar-brand"><i class="fas fa-tree mr-2"></i>Houses_Price_Prediction</a>
+    </div>
+    </nav>
+<!-- Inner -->
+<div class="carousel-inner">
+  <!-- Single item -->
+  <div class="carousel-item active">
+    <video class="img-fluid" autoplay loop muted>
+      <source src="https://mdbootstrap.com/img/video/Tropical.mp4" type="video/mp4" />
+    </video>
+    <div class="carousel-caption d-none d-md-block">
+      <h5 style="color: black; font-size: 50px; text-align: center;">For Better Living</h5>
+      <p class="display-3">
+        Hopes and Dreams
+      </p>
+    </div>
+  </div>
+
+  
+
+  
+<!-- Inner -->
+
+<!-- Controls -->
+</div>
+<!-- Carousel wrapper -->
+
+     <section id="header" class="jumbotron text-center">
+       <h1 class="display-3">HOUSES</h1>
+       <p class="lead">Click here for Price Prediction and know about your dream house.</p>
+       <a href="" class="btn btn-primary">Scroll Down</a>
+      
+  </section>
+    
+  <section id="gallery">
+    <div class="container">
+      <div class="row">
+      <div class="col-lg-4 mb-4">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1630650231815-a567e2ed26cc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Base Price</h5>
+          <p class="card-text"> This is the price of the property per square foot and the saleable area. For example, if the price per square foot is Rs. 6,000 per sqft. and the saleable area is 1,000 square feet, then the base price amounts up to 6,000 x 1,000 = Rs. 60 lakhs. Base price only gives you a vague idea of the total cost of the flat based on property prices.</p>
+         
+        </div>
+       </div>
+      </div>
+    <div class="col-lg-4 mb-4">
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1604014238170-4def1e4e6fcf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Floor Rise</h5>
+          <p class="card-text">Most developers will increase the rate per square foot of the house as the number of the floor increases in a high rise building, i.e. the rate for the first floor will be cheaper than the rate for the fifth floor. In case you have a location preference that is a popular choice of many – like a corner flat with a great view </p>
+        
+        </div>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-4">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Payment Plans</h5>
+          <p class="card-text">Different Payment plans can be adopted to pay the aforesaid amount. You can choose between the two types of payment plans – time tied and construction tied.When you opt for time-tied payments, you will have to pay the developer on a monthly or quarterly basis regardless of the progress in construction.</p>
+        
+        </div>
+       </div>
+      </div>
+    </div>
+  </div>
+  </section>
+  
+
+    
+    <div class="container">
+        <div class="row">
+            <div class="card" style="width:100% ;height:100% ;margin-top:50px ;">
+                <div class="card-header" style="text-align: center;">
+                    <h1>Welcome to the House Price Predictor</h1>
+
+                </div>
+                <p style="text-align: center;">Want to predict the price of a new House in Bangalore? Try filling the
+                    details below:</p>
+                <div class="card-body">
+                    <form method="post" accept-charset="utf-8">
+
+                        <div class="row">
+                            <div class="col-md-6 form-group" style="text-align: center;">
+                                <label><b>Select the Location: </b></label>
+                                <select class="selectpicker form-control" id="location" name="location" required="1">
+                                    {% for location in locations %}
+                                    <option value="{{ location }}">{{ location }}</option>
+                                    {% endfor %}
+                                </select>
+
+                            </div>
+
+
+                            <div class="col-md-6 form-group" style="text-align: center;">
+                                <label><b>Enter the BHK: </b></label>
+                                <input type="text" class="form-control" id="bhk" name="bhk" placeholder="Enter the BHK">
+                            </div>
+
+
+                            <div class="col-md-6 form-group" style="text-align: center;">
+                                <label><b>Enter the Number of Bathroom: </b></label>
+                                <input type="text" class="form-control" id="bath" name="bath"
+                                    placeholder="Enter the No. of Bathroom">
+                            </div>
+
+
+                            <div class="col-md-6 form-group" style="text-align: center;">
+                                <label><b>Square Feet </b></label>
+                                <input type="text" class="form-control" id="total_sqft" name="total_sqft"
+                                    placeholder="Enter the Sqft">
+                            </div>
+                            <br>
+                            <div class="col-md-12 form-group" style="padding-top: 40px;">
+                                <button class="btn btn-primary form-control" onclick="send_data()">Predict
+                                    Price</button>
+                            </div>
+
+
+                        </div>
+                    </form>
+                    <br>
+                    <div class="col-md-12" style="text-align: center;">
+                        <h3><span id="prediction"></span></h3>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        function form_handler(event) {
+            event.preventDefault();
+        }
+
+
+        function send_data() {
+            document.querySelector('form').addEventListener('submit', form_handler);
+            var fd = new FormData(document.querySelector('form'));
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/predict', true);
+            document.getElementById('prediction').innerHTML = "Wait Prediciting Price!,,,,";
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == XMLHttpRequest.DONE) {
+                    document.getElementById('prediction').innerHTML = "Prediction:₹ " + xhr.responseText;
+                }
+
+            };
+            xhr.onload = function () { };
+            xhr.send(fd);
+        }
+    </script>
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
